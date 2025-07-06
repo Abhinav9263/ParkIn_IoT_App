@@ -120,7 +120,7 @@ curl -X POST http://<your_ip>:5000/entry \
 
 📁 Project Structure
 
-ParkIn_App/
+ParkIn_IoT_App/
 ├── lib/
 │   ├── main.dart
 │   ├── parking_screen.dart
