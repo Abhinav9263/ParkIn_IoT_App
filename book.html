@@ -2,12 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
-    </style>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
-    </style>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yatra+One&display=swap');
     </style>
@@ -19,26 +13,23 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
             min-height: 100vh;
-            height: 100vh;
+            height: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             color: #ffffff;
-            overflow: hidden;
+            overflow-x: hidden;
             padding: 20px;
         }
-
         .header {
             text-align: center;
             margin-bottom: 20px;
         }
-
         .logo {
             width: 80px;
             height: 80px;
@@ -50,50 +41,42 @@
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
-        
         .logo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
         }
-
         .title {
             font-size: 32px;
             font-weight: bold;
             margin-bottom: 10px;
         }
-
         .subtitle {
             font-size: 18px;
             color: #4CAF50;
             font-weight: 600;
         }
-
         .booking-container {
-            background: rgba(40, 40, 40, 0.95);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            width: 100%;
-            max-width: 500px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-height: 70vh;
-            overflow-y: auto;
-        }
+    background: rgba(40, 40, 40, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
         .form-group {
             margin-bottom: 20px;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
             color: #e0e0e0;
         }
-
         .form-group input {
             width: 100%;
             padding: 12px;
@@ -104,17 +87,14 @@
             font-size: 16px;
             transition: all 0.3s ease;
         }
-
         .form-group input:focus {
             outline: none;
             border-color: #4CAF50;
             box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
         }
-
         .form-group input::placeholder {
             color: #888;
         }
-
         .book-btn {
             width: 100%;
             padding: 15px;
@@ -128,16 +108,13 @@
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
         }
-
         .book-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 12px 30px rgba(76, 175, 80, 0.4);
         }
-
         .book-btn:active {
             transform: translateY(0);
         }
-
         /* Modal Styles */
         .modal {
             display: none;
@@ -150,7 +127,6 @@
             background-color: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(5px);
         }
-
         .modal-content {
             background: rgba(40, 40, 40, 0.95);
             margin: 5% auto;
@@ -161,7 +137,6 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
         }
-
         .close {
             color: #aaa;
             float: right;
@@ -170,17 +145,14 @@
             cursor: pointer;
             transition: color 0.3s ease;
         }
-
         .close:hover {
             color: #4CAF50;
         }
-
         .modal h2 {
             color: #4CAF50;
             margin-bottom: 20px;
             text-align: center;
         }
-
         .response {
             margin-top: 15px;
             padding: 15px;
@@ -192,40 +164,33 @@
             align-items: center;
             justify-content: center;
         }
-
         .response.success {
             background: rgba(76, 175, 80, 0.2);
             color: #4CAF50;
             border: 1px solid rgba(76, 175, 80, 0.3);
         }
-
         .response.error {
             background: rgba(244, 67, 54, 0.2);
             color: #f44336;
             border: 1px solid rgba(244, 67, 54, 0.3);
         }
-
         .response.warning {
             background: rgba(255, 193, 7, 0.2);
             color: #ffc107;
             border: 1px solid rgba(255, 193, 7, 0.3);
         }
-
         @media (max-width: 600px) {
             .booking-container {
                 margin: 20px;
                 padding: 30px 20px;
             }
-            
             .title {
                 font-size: 24px;
             }
-            
             .logo {
                 width: 60px;
                 height: 60px;
             }
-            
             .logo img {
                 width: 100%;
                 height: 100%;
@@ -244,36 +209,29 @@
         <div class="title">Quick Parking</div>
         <div class="subtitle">by <span style="color: #4CAF50;">ParkIn</span></div>
     </div>
-
     <div class="booking-container">
         <div class="form-group">
             <label for="fullName">Full Name</label>
             <input type="text" id="fullName" placeholder="Enter your name" required>
         </div>
-
         <div class="form-group">
             <label for="vehicleNumber">Vehicle Number</label>
             <input type="text" id="vehicleNumber" placeholder="e.g. WB06AA1234" required>
         </div>
-
         <div class="form-group">
             <label for="bookingDate">Booking Date</label>
             <input type="date" id="bookingDate" required>
         </div>
-
         <div class="form-group">
             <label for="timeIn">In Time</label>
             <input type="time" id="timeIn" required>
         </div>
-
         <div class="form-group">
             <label for="timeOut">Out Time</label>
             <input type="time" id="timeOut" required>
         </div>
-
         <button id="bookNowBtn" class="book-btn">Book My Slot</button>
     </div>
-
     <!-- Modal -->
     <div id="bookingModal" class="modal">
         <div class="modal-content">
@@ -285,50 +243,40 @@
             <div id="response" class="response"></div>
         </div>
     </div>
-
     <script>
         // Set today's date as default
         document.getElementById('bookingDate').valueAsDate = new Date();
-
         const modal = document.getElementById("bookingModal");
-
         document.getElementById("bookNowBtn").onclick = () => {
             modal.style.display = "block";
             submitBooking();
         };
-
         function closeModal() {
             modal.style.display = "none";
             document.getElementById("response").innerText = '';
         }
-
         async function submitBooking() {
             const vehicle = document.getElementById('vehicleNumber').value;
             const timeIn = document.getElementById('timeIn').value;
             const timeOut = document.getElementById('timeOut').value;
             const responseDiv = document.getElementById('response');
-
             if (!vehicle || !timeIn || !timeOut) {
                 responseDiv.innerText = "⚠️ Please fill in all fields.";
                 responseDiv.className = "response warning";
                 return;
             }
-
             const payload = {
                 vehicle_number: vehicle,
                 in_time: timeIn,
                 out_time: timeOut
             };
-
             try {
                 const res = await fetch("http://192.168.0.105:5000/api/book_slot", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(payload)
                 });
-
                 const data = await res.json();
-
                 if (data.success) {
                     responseDiv.innerHTML = `✅ <b>Slot ${data.slot}</b> booked successfully!`;
                     responseDiv.className = "response success";
@@ -341,14 +289,12 @@
                     responseDiv.innerText = `❌ Booking failed: ${data.message}`;
                     responseDiv.className = "response error";
                 }
-
             } catch (error) {
                 console.error(error);
                 responseDiv.innerText = "⚠️ Server error. Please try again later.";
                 responseDiv.className = "response error";
             }
         }
-
         // Close modal when clicking outside
         window.onclick = function(event) {
             if (event.target == modal) {
