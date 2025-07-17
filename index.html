@@ -49,26 +49,13 @@
             <div class="hero-buttons">
                 <a href="search.html" class="btn btn-primary">Find Parking</a>
                 <a href="list-space.html" class="btn btn-secondary">List Your Space</a>
-               <button id="bookNowBtn" class="btn btn-primary" style="margin-top: 30px;">Book Now</button>
-
+              <a href="book.html" class="btn btn-primary" style="margin-top: 30px;" id="bookNowBtn">Book Now</a>
 
             </div>
-            <!-- Booking Modal -->
-<div id="bookingModal" class="modal" style="display:none;">
-  <div class="modal-content" style="
-    background:#fff; margin:auto; padding:20px; border-radius:8px;
-    width:300px; box-shadow:0 4px 10px rgba(0,0,0,0.2); position:relative;">
-    <span onclick="closeModal()" style="position:absolute; top:10px; right:15px; cursor:pointer;">&times;</span>
-    <h3>Book Parking</h3>
-    <input type="text" id="vehicleNumber" placeholder="Vehicle Number" required style="width:100%; padding:10px; margin-top:10px;">
-    <input type="time" id="timeIn" required style="width:100%; padding:10px; margin-top:10px;">
-    <input type="time" id="timeOut" required style="width:100%; padding:10px; margin-top:10px;">
-    <button onclick="submitBooking()" style="width:100%; margin-top:15px; background:#16a34a; color:#fff; padding:10px; border:none; border-radius:5px;">Submit</button>
-   <div id="response" style="margin-top:10px; font-weight:bold; color: black;"></div>
-
-  </div>
-</div>
+           
         </div>
+
+       
         
     </section>
 
@@ -599,61 +586,9 @@
     <script src="js/voice-commands.js"></script>
     <script src="https://unpkg.com/qr-scanner@1.4.2/qr-scanner.umd.min.js"></script>
     <script src="js/qr-handler.js"></script>
-<!--✅ MODIFIED VERSION of the script portion ONLY-->
-<script>
-  const modal = document.getElementById("bookingModal");
 
-  document.getElementById("bookNowBtn").onclick = () => {
-    modal.style.display = "block";
-  };
 
-  function closeModal() {
-    modal.style.display = "none";
-    document.getElementById("response").innerText = '';
-  }
 
-  async function submitBooking() {
-    const vehicle = document.getElementById('vehicleNumber').value;
-    const timeIn = document.getElementById('timeIn').value;
-    const timeOut = document.getElementById('timeOut').value;
-    const responseDiv = document.getElementById('response');
-
-    if (!vehicle || !timeIn || !timeOut) {
-      responseDiv.innerText = "⚠️ Please fill in all fields.";
-      return;
-    }
-
-    const payload = {
-      vehicle_number: vehicle,
-      in_time: timeIn,
-      out_time: timeOut
-    };
-
-    try {
-      const res = await fetch("http://192.168.0.105:5000/api/book_slot", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-
-      const data = await res.json();
-
-      if (data.success) {
-        responseDiv.innerHTML = `✅ <b>Slot ${data.slot}</b> booked successfully!`;
-        setTimeout(() => {
-          modal.style.display = "none";
-          alert(`Booking confirmed for Slot ${data.slot}.`);
-        }, 2000);
-      } else {
-        responseDiv.innerText = `❌ Booking failed: ${data.message}`;
-      }
-
-    } catch (error) {
-      console.error(error);
-      responseDiv.innerText = "⚠️ Server error. Please try again later.";
-    }
-  }
-</script>
 
 
 </body>
